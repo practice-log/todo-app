@@ -1,0 +1,39 @@
+/* リストの調整 */
+.list{
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 120px 8px 10px;
+}
+
+/* 中黒の表示 */
+.list::before{
+  content: "･";
+  margin-right: 8px;
+}
+
+/* テキストの調整 */
+.list span{
+  flex: 1;
+  word-break: break-word;
+}
+
+/* 追加・リセットボタンの調整 */
+button{
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+/* 完了・消去ボタンの調整 */
+.actbtn{
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+/* 取り消し線の表示 */
+.lineth{
+  text-decoration: line-through;
+  opacity: 0.7;
+}
