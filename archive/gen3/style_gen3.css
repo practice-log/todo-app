@@ -1,0 +1,19 @@
+/* 削除ボタンの調整 */
+.delbtn{
+margin-left: 35px;
+}
+
+/* 完了ボタンの調整 */
+.complebtn{
+margin-left: 25px;
+}
+
+/* リストの調整 */
+.text{
+margin: 10px;
+}
+
+/* 取り消し線の表示 */
+.comple{
+text-decoration: line-through;
+}
