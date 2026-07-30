@@ -13,7 +13,7 @@ JavaScript学習の一環として作成したタスク管理アプリです。
 ## 技術
 - HTML
 - CSS
-- JavaScript（イベント処理・DOM操作）
+- JavaScript（イベント処理・DOM操作・データ管理）
 - localStorage（データ永続化）
 
 ##  工夫した点
