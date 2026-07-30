@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* 削除ボタンの調整 */
+.delbtn{
+padding: 3px 5px;
+font-size:12px;
+margin-left: 40px;
+}
+
+/* リストの調整 */
+.list{
+margin: 10px;
+}
