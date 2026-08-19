@@ -4,6 +4,7 @@ const btn2 = document.getElementById("btn2");
 const texts = document.getElementById("texts");
 const ul = document.getElementById("ul");
 
+
 // 配列
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
@@ -13,15 +14,17 @@ function save(){
    "tasks", JSON.stringify(tasks)
   )};
 
-// タスクデータの作成
+// countの定義
+let count = tasks.length;
 
+// タスクデータの作成
 function addtask(){  
   if(texts.value.trim() === "") return;
   
   tasks.push({
     txt: texts.value,
     completed: false,
-    order: Date.now()
+    order: count++
    });
 
   texts.value = "";
