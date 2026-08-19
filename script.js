@@ -5,6 +5,7 @@ const texts = document.getElementById("texts");
 const ul = document.getElementById("ul");
 
 
+
 // 配列
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
@@ -12,10 +13,13 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 function save(){
   localStorage.setItem(
    "tasks", JSON.stringify(tasks)
-  )};
+  )}; 
 
 // countの定義
-let count = tasks.length;
+ let count = tasks.length;
+
+// idの定義
+let getid = tasks.length;
 
 // タスクデータの作成
 function addtask(){  
@@ -24,6 +28,7 @@ function addtask(){
   tasks.push({
     txt: texts.value,
     completed: false,
+    id: getid++,
     order: count++
    });
 
@@ -53,7 +58,7 @@ function render(){
  
   ul.innerHTML = "";
 
- tasks.forEach(function(task, index){
+ tasks.forEach(function(task){
 
   const li = document.createElement("li"); // リスト
   li.className = "list";
@@ -71,7 +76,7 @@ function render(){
    combtn.textContent = "完了";
    combtn.className = "combtn";
    combtn.addEventListener("click", function(){
-    tasks[index].completed = !tasks[index].completed;
+    task.completed = !task.completed;
 
    tasks.sort(function(a, b){
     if(a.completed === b.completed){
@@ -89,7 +94,9 @@ function render(){
    delbtn.textContent = "消去";
    delbtn.className = "delbtn";
    delbtn.addEventListener("click", function(){
-    tasks.splice(index, 1);
+    tasks = tasks.filter(function(t){
+      return t.id !== task.id;
+    });
      save();
      render();
    });
